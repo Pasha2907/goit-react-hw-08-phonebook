@@ -6,16 +6,16 @@ import { Input } from './Filter.styled';
 export const Filter = () => {
   const dispatch = useDispatch();
 
-  const filter = useSelector(selectedFilter);
+  const value = useSelector(selectedFilter);
   const handleOnChange = event => {
-    dispatch(setFilter(event.target.filter));
+    dispatch(setFilter(event.target.value));
   };
 
   return (
     <Input
       type="text"
       placeholder="Type to search..."
-      value={filter}
+      value={value}
       name="filter"
       id="search"
       onChange={handleOnChange}
